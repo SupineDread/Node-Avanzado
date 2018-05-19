@@ -11,7 +11,7 @@ const saveAnimal = (req, res) => {
   let animal = new Animal()
   let params = req.body
 
-  if(!params.name){
+  if(params.name){
     animal.name = params.name
     animal.description = params.description
     animal.year = params.year
