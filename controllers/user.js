@@ -152,14 +152,14 @@ const getImageFile = (req, res) => {
 }
 
 const getKeepers =  (req, res) => {
-  User.find({role: 'ROLE_ADMIN'}).exec((err, users)=>{
+  User.find({role: 'ROLE_ADMIN'}).exec((err, keepers)=>{
     if (err) {
       res.status(500).send({message: 'No ha sido posible obtener los cuidadores'})
     }else{
-      if (!users) {
+      if (!keepers) {
         res.status(404).send({message: 'No hay cuidadores'})
       }else{
-        res.status(200).send({users})
+        res.status(200).send({keepers})
       }
     }
   })
